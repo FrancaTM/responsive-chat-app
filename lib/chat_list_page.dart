@@ -17,12 +17,33 @@ class _ChatListPageState extends State<ChatListPage> {
 
   @override
   Widget build(BuildContext context) {
+    var hasDetailPage =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+    Widget child;
+
+    if (hasDetailPage) {
+      child = Row(
+        children: <Widget>[
+          SizedBox(
+            width: 250,
+            height: double.infinity,
+            child: _buildList(context, hasDetailPage),
+          ),
+          Expanded(
+            child: _buildChat(context, _selectedIndex),
+          ),
+        ],
+      );
+    } else {
+      child = _buildList(context, hasDetailPage);
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Chats'),
       ),
       body: SafeArea(
-        child: Container(),
+        child: child,
       ),
     );
   }
