@@ -49,9 +49,12 @@ class AvatarImageView extends StatelessWidget {
           .take(letterCount)
           .join()
           .toUpperCase();
-      return Text(
-        initials,
-        style: TextStyle(color: textColor, fontSize: 14),
+      return FittedBox(
+        fit: BoxFit.contain,
+        child: Text(
+          initials,
+          style: TextStyle(color: textColor, fontSize: 14),
+        ),
       );
     } else {
       return Image.network(photoUrl);
