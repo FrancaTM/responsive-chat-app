@@ -58,7 +58,11 @@ class _ConversationPageState extends State<ConversationPage> {
                 },
               ),
             if (_isGalleryVisible) _buildGalleryToolbar(context),
-            if (_isGalleryVisible) SquareGallery(),
+            if (_isGalleryVisible)
+              AspectRatio(
+                aspectRatio: 3,
+                child: SquareGallery(),
+              ),
           ],
         ),
       ),
