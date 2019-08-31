@@ -22,9 +22,9 @@ class _ChatListPageState extends State<ChatListPage> {
         title: Text('Chats'),
       ),
       body: SafeArea(
-        child: LayoutBuilder(
-          builder: (builder, constraints) {
-            var hasDetailPage = constraints.maxWidth > 600;
+        child: OrientationBuilder(
+          builder: (builder, orientation) {
+            var hasDetailPage = orientation == Orientation.landscape;
 
             if (hasDetailPage) {
               return Row(
