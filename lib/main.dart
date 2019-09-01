@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(value: chatProvider),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primaryColor: Color(0xff006837),
             primaryColorDark: Color(0xff004012),
